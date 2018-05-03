@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Great Number Game</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename ='index.css') }}">
+    <link type="stylesheets">
+  </head>
+  <body>
+    <div>Welcome to the great number game!</div>
+    <div>I am thinking of a number between 1-100. Take a guess!</div>
+
+    {% if session.get("verify") == none or session.get("verify") ==
+    "low" or session.get("verify") == "high" %}
+    <form action="/guess" method="post">
+      <input type="text" name="guess">
+      <input type="submit" name="submit" value="Submit">
+    </form>
+
+    {% elif session.get("verify") == "win" %}
+    <form action="/replay">
+      <input type="submit" name="submit" value="Play again!">
+    </form>
+    {% endif %}
+
+
+    <div id="out">
+      {% if session.get("verify") == "win" %}
+      <p id="win">
+         You win!
+      </p>
+
+
+      {% elif session.get("verify") == "low" %}
+      <p id="low">
+         Too Low!
+      </p>
+      {% elif session.get("verify") == "high" %}
+      <p id="high">
+         Too High!
+      </p>
+      {% endif %}
+    </div>
+  </body>
+</html>

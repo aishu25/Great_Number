@@ -1,0 +1,27 @@
+body{
+		border: 2px solid black;
+		font-family: Comic Sans MS, Helvetica, sans-serif;
+		padding: 20px;
+		margin: 20px;
+	}
+input[type=submit]{
+	background-color: blue;
+    color: white;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#low{
+	background-color: red;
+	padding: 10px;
+}
+#high{
+	background-color: yellow;
+	padding: 10px;
+}
+#win{
+	background-color: green;
+	padding: 10px;
+}
